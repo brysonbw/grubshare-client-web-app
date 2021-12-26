@@ -94,11 +94,9 @@ placeholder="Enter description"/>
         </ErrorMessage>
 <Field as="select" id="inputMeal" name="meal" className="
         pl-1
-      text-gray-700
       bg-white bg-clip-padding bg-no-repeat
       border border-solid border-gray-300
       rounded
-      focus:text-gray-700 focus:bg-white focus:border-gray-500 focus:outline-none
 ">
 <option value="" label="select a meal type" />
 <option value="homecooked" label="homecooked" />
