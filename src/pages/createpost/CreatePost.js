@@ -39,7 +39,6 @@ const [imagePreview, setImagePreview] = useState(null);
           headers: { token: localStorage.getItem("token") },
         })
         .then((response) => {
-          console.log(response.data)
           navigate('/')
         });
         }
@@ -134,7 +133,7 @@ onChange={(e) => {
 </div>
 
 
-<button className="my-5 flex-shrink-0 bg-red-400 hover:bg-red-500 text-sm text-white py-1 px-2 rounded" type="submit">
+<button disabled={!formProps.isValid || formProps.isSubmitting} className="my-5 flex-shrink-0 bg-red-400 hover:bg-red-500 text-sm text-white py-1 px-2 rounded" type="submit">
   Post
 </button>
 </Form>
