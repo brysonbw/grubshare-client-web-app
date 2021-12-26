@@ -27,8 +27,8 @@ function Login() {
         .post('https://grubshare-api.herokuapp.com/api/auth/login', data)
         .then((response) => {
           if (response.data.error) {
-              alert(response.data.error)
-          } else{
+              console.log(response.data.error)
+          } else {
         localStorage.setItem("token", response.data.token);
               setAuth({
                 email: response.data.email,

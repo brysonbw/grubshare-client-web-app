@@ -88,10 +88,8 @@ placeholder="Enter description"/>
         { msg => <div className="mb-2 text-red-600 text-xs">{msg}</div> }
         </ErrorMessage>
 <Field as="select" id="inputMeal" name="meal" className="flex-auto
-form-select appearance-none
         pl-1
       block
-      text-base
       font-normal
       text-gray-700
       bg-white bg-clip-padding bg-no-repeat
