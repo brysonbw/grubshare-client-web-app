@@ -15,6 +15,11 @@ const [imagePreview, setImagePreview] = useState(null);
         image: "",
       };
 
+      const options = [
+        { value: 'foo', label: 'Foo' },
+        { value: 'bar', label: 'Bar' },
+      ]
+
       const navigate = useNavigate()
 
       useEffect(() => {
@@ -87,19 +92,14 @@ placeholder="Enter description"/>
 <ErrorMessage name="meal">
         { msg => <div className="mb-2 text-red-600 text-xs">{msg}</div> }
         </ErrorMessage>
-<Field as="select" id="inputMeal" name="meal" className="flex-auto
+<Field as="select" id="inputMeal" name="meal" className="
         pl-1
-      block
-      font-normal
       text-gray-700
       bg-white bg-clip-padding bg-no-repeat
       border border-solid border-gray-300
       rounded
-      transition
-      ease-in-out
-      m-0
       focus:text-gray-700 focus:bg-white focus:border-gray-500 focus:outline-none
-" >
+">
 <option value="" label="select a meal type" />
 <option value="homecooked" label="homecooked" />
 <option value="takeout" label="takeout" />
