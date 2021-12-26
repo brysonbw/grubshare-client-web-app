@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom';
-import { Formik, ErrorMessage, Field, Form } from "formik";
+import { Formik, ErrorMessage, Field, Form  } from "formik";
 import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 import axios from 'axios';
@@ -14,11 +13,6 @@ const [imagePreview, setImagePreview] = useState(null);
         meal: "",
         image: "",
       };
-
-      const options = [
-        { value: 'foo', label: 'Foo' },
-        { value: 'bar', label: 'Bar' },
-      ]
 
       const navigate = useNavigate()
 
@@ -92,16 +86,16 @@ placeholder="Enter description"/>
 <ErrorMessage name="meal">
         { msg => <div className="mb-2 text-red-600 text-xs">{msg}</div> }
         </ErrorMessage>
-<Field as="select" id="inputMeal" name="meal" className="
-        pl-1
-      bg-white bg-clip-padding bg-no-repeat
-      border border-solid border-gray-300
-      rounded
-">
-<option value="" label="select a meal type" />
-<option value="homecooked" label="homecooked" />
-<option value="takeout" label="takeout" />
-</Field> 
+        <div id="inputMeal" role="group" aria-labelledby="meal-radio-group">
+            <label>
+              <Field type="radio" name="meal" value="homecooked" />
+              homecooked
+            </label>
+            <label>
+              <Field className="ml-3" type="radio" name="meal" value="takeout" />
+              takeout
+            </label>
+          </div>
 </div>
 
 <div className="flex flex-col border-b border-gray-500 py-2 mb-3">
