@@ -12,9 +12,13 @@ function Signup() {
       };
 
       const validationSchema = Yup.object().shape({
-        username: Yup.string().min(3, 'must be more than 3 characters').max(20, 'must be less than 20 characters').required('required'),
+        username: Yup.string().min(3, 'username too short').max(20, 'username too long').required('required'),
         email: Yup.string().email('invalid email').required('required'),
-        password: Yup.string().min(7, 'must be more than 7 characters').required('required'),
+        password: Yup.string().min(10, 'password too short').max(128, 'password too long')
+        .matches(/^(?=.*[a-z])/, 'must contain at least one lowercase character')
+        .matches(/^(?=.*[A-Z])/, 'must contain at least one uppercase character')
+        .matches(/^(?=.*[0-9])/, 'must contain at least one number')
+        .required('required'),
       });
 
         const navigate = useNavigate()

@@ -15,7 +15,11 @@ function Login() {
 
       const validationSchema = Yup.object().shape({
         email: Yup.string().email('invalid email').required('required'),
-        password: Yup.string().min(7, 'must be more than 7 characters').required('required'),
+        password: Yup.string().min(10, 'password too short').max(128, 'password too long')
+        .matches(/^(?=.*[a-z])/, 'must contain at least one lowercase character')
+        .matches(/^(?=.*[A-Z])/, 'must contain at least one uppercase character')
+        .matches(/^(?=.*[0-9])/, 'must contain at least one number')
+        .required('required'),
       });
 
 
